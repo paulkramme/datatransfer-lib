@@ -4,7 +4,6 @@
 import socket
 import sys
 import os
-#from sendfile import sendfile
 
 
 def transmit(path, TCP_IP, TCP_PORT = 8000):
