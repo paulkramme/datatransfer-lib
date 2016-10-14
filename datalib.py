@@ -4,7 +4,7 @@
 import socket
 import sys
 import os
-from sendfile import sendfile
+#from sendfile import sendfile
 
 
 def transmit(path, TCP_IP, TCP_PORT = 8000):
@@ -15,7 +15,7 @@ def transmit(path, TCP_IP, TCP_PORT = 8000):
 	sock.connect((TCP_IP, TCP_PORT))
 	offset = 0
 	while 1:
-		sent = sendfile(sock.fileno(), file.fileno(), offset, blocksize)
+		sent = os.sendfile(sock.fileno(), file.fileno(), offset, blocksize)
 		if sent == 0:
 			print("Done.")
 			break
