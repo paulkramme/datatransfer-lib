@@ -69,5 +69,5 @@ def main():
 	else:
 		print("USAGE: " + sys.argv[0] + " transmit path ip port\nreceive path port ip")
 
-if __name__ == __name__:
+if __name__ == "__main__":
 	main()
