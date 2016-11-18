@@ -36,7 +36,6 @@ def transmit(path, TCP_IP, TCP_PORT = 8000):
 	while 1:
 		sent = os.sendfile(sock.fileno(), file.fileno(), offset, blocksize)
 		if sent == 0:
-			print("Done.")
 			break
 		offset += sent
 
@@ -50,11 +49,12 @@ def receive(filename, TCP_PORT = 8000, TCP_IP = ''):
 	s.listen(1)
 
 	conn, addr = s.accept()
-	print('Connection address:', addr)
-	while 1:
+	if __name__ == "__main__":
+	    print('Connection address:', addr)
+	while True:
 		data = conn.recv(4096)
 		if not data:
-			print("Done")
+			#print("Done")
 			break
 		file.write(data)
 	file.close()
@@ -68,6 +68,7 @@ def main():
 		transmit(sys.argv[2], sys.argv[3])#, sys.argv[4])
 	else:
 		print("USAGE: " + sys.argv[0] + " transmit path ip port\nreceive path port ip")
+
 
 if __name__ == "__main__":
 	main()
