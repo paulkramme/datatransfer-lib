@@ -1,2 +1,2 @@
-# datatransfer-lib
+# datatransfer
 Python module to transfer files
