@@ -27,7 +27,7 @@ import os
 
 
 def transmit(path, TCP_IP, TCP_PORT = 8000):
-	print(path)
+	#print(path)
 	file = open(path, "r")
 	blocksize = os.path.getsize(path)
 	sock = socket.socket()
